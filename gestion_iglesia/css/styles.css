@@ -1,0 +1,22 @@
+.contenedor-principal{
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+}
+.contenedor-izquierda{
+    margin: 0px;
+    padding: 0px;
+
+    height: 100vh;
+    width: 15vw;
+}
+.contenedor-derecha{
+    margin: 0px;
+    padding: 0px;
+    
+    height: 100vh;
+    width: 85vw;
+    background-color: rgb(238, 234, 234);
+}
