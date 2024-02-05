@@ -19,10 +19,10 @@ if (isset($_GET['error'])) {
     }
 }
 if (isset($_GET['error'])) {
-    if ($_GET['error'] == 'dni_no_existe') {
+    if ($_GET['error'] == 'dni_no_existe_permitido') {
         echo '
             <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                <strong>Ocurrió un error inesperado!</strong> La Cédula ingresada no se encuentra registrada<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                <strong>Ocurrió un error inesperado!</strong> La Cédula ingresada no se encuentra registrada o no tiene el cargo admitido<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         ';
     }

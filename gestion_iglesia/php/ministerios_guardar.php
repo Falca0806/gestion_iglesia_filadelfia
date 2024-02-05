@@ -41,7 +41,7 @@
     //Verificar si ya esta registrada la cedula
 
     $verificar_dni = conexion();
-    $verificar_dni = $verificar_dni->prepare("SELECT * FROM personal WHERE personal_dni = :dni");
+    $verificar_dni = $verificar_dni->prepare("SELECT * FROM personal WHERE personal_dni = :dni AND cargos_id = '3'");
     $verificar_dni->bindParam(":dni",$dni);
     $verificar_dni->execute();
 
@@ -75,7 +75,7 @@
 
                 
     }else {
-        header('Location: ../index.php?vista=ministerios&error=dni_no_existe');
+        header('Location: ../index.php?vista=ministerios&error=dni_no_existe_permitido');
         exit();
     }
     $verificar_dni = null;

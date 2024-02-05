@@ -61,14 +61,10 @@
     }
 
     //Verificar si ya esta registrada la cedula y si cumple con el cargo de administrador
-    $verificar_dni = conexion();
-    if ($rol == '1') {
-        $verificar_dni = $verificar_dni->prepare("SELECT * FROM personal WHERE personal_dni = :dni AND cargos_id = '1'");
-    }elseif ($rol == '2') {
-        $verificar_dni = $verificar_dni->prepare("SELECT * FROM personal WHERE personal_dni = :dni AND cargos_id = '2'");
-    }
-
     
+
+    $verificar_dni = conexion();
+    $verificar_dni = $verificar_dni->prepare("SELECT * FROM personal WHERE personal_dni = :dni AND cargos_id = '1'");
     $verificar_dni->bindParam(":dni",$dni);
     $verificar_dni->execute();
 
