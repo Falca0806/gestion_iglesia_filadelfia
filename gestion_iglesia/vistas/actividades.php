@@ -19,55 +19,10 @@ if (isset($_GET['error'])) {
     }
 }
 if (isset($_GET['error'])) {
-    if ($_GET['error'] == 'apellido') {
+    if ($_GET['error'] == 'detalle') {
         echo '
             <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                <strong>Ocurrió un error inesperado!</strong> El Apellido no coincide con el formato solicitado<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        ';
-    }
-}
-if (isset($_GET['error'])) {
-    if ($_GET['error'] == 'dni') {
-        echo '
-            <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                <strong>Ocurrió un error inesperado!</strong> La Cédula no coincide con el formato solicitado<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        ';
-    }
-}
-if (isset($_GET['error'])) {
-    if ($_GET['error'] == 'telefono') {
-        echo '
-            <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                <strong>Ocurrió un error inesperado!</strong> El Teléfono no coincide con el formato solicitado<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        ';
-    }
-}
-if (isset($_GET['error'])) {
-    if ($_GET['error'] == 'direccion') {
-        echo '
-            <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                <strong>Ocurrió un error inesperado!</strong> La Dirección no coincide con el formato solicitado<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        ';
-    }
-}
-if (isset($_GET['error'])) {
-    if ($_GET['error'] == 'correo_existe') {
-        echo '
-            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                <strong>Ocurrió un error inesperado!</strong> El Correo Electrónico ingresado ya esta registrado<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        ';
-    }
-}
-if (isset($_GET['error'])) {
-    if ($_GET['error'] == 'correo') {
-        echo '
-            <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                <strong>Ocurrió un error inesperado!</strong> El Correo Electrónico no coincide con el formato solicitado<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                <strong>Ocurrió un error inesperado!</strong> El Detalle no coincide con el formato solicitado<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         ';
     }
@@ -76,16 +31,25 @@ if (isset($_GET['error'])) {
     if ($_GET['error'] == 'fecha') {
         echo '
             <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                <strong>Ocurrió un error inesperado!</strong> La Fecha de Nacimiento no coincide con el formato solicitado<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                <strong>Ocurrió un error inesperado!</strong> La Fecha no coincide con el formato solicitado<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         ';
     }
 }
 if (isset($_GET['error'])) {
-    if ($_GET['error'] == 'dni_existe') {
+    if ($_GET['error'] == 'hora') {
         echo '
-            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                <strong>Ocurrió un error inesperado!</strong> La Cédula de Identidad ya se encuentra registrada<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong>Ocurrió un error inesperado!</strong> La Hora no coincide con el formato solicitado<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        ';
+    }
+}
+if (isset($_GET['error'])) {
+    if ($_GET['error'] == 'fecha_hora_existe') {
+        echo '
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong>Ocurrió un error inesperado!</strong> La Fecha y Hora ya se encuentran registradas<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         ';
     }
@@ -121,7 +85,7 @@ if (isset($_GET['error'])) {
     <div class="modal-dialog modal-dialog-end modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5">Nuevo Personal</h1>
+                <h1 class="modal-title fs-5">Nueva Actividad</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -129,11 +93,11 @@ if (isset($_GET['error'])) {
                 require_once "./php/main.php";
             ?>
                 <!-- FORMULARIO -->
-                <form action="./php/personal_guardar.php" method="POST" class="FormularioAjax" autocomplete="off" enctype="multipart/form-data">
+                <form action="./php/actividades_guardar.php" method="POST" class="FormularioAjax" autocomplete="off" enctype="multipart/form-data">
                     <div class="row mb-4">
                         <div class="ms-3 col-3">
                             <label>Nombre</label>
-                            <input type="text" class="form-control" name="personal_nombre" pattern="[a-zA-ZáéíóúÁÉÍÓÚ ]{3,40}"  maxlength="40" required>
+                            <input type="text" class="form-control" name="actividades_nombre" pattern="[a-zA-ZáéíóúÁÉÍÓÚ ]{3,50}"  maxlength="50" required>
                         </div>
                         <div class="ms-3 col-3">
                             <label>Ministerio</label>
@@ -154,7 +118,7 @@ if (isset($_GET['error'])) {
                         </div>
                         <div class="mx-3 col-3">
                             <label>Detalle</label>
-                            <textarea class="form-control" name="cargos_descripcion" pattern="[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ -.,]{5,200}" maxlength="200"  rows="2" style="width: 300px;" required></textarea>                          
+                            <textarea class="form-control" name="actividades_detalle" pattern="[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ -.,]{5,200}" maxlength="200"  rows="2" style="width: 300px;" required></textarea>                          
                             </div>
                         </div>
                     </div>
@@ -162,12 +126,17 @@ if (isset($_GET['error'])) {
                     <div class="row mb-4">
                     <div class="ms-3 col-3">
                             <label>Fecha de Actividad</label>
-                            <input type="date" class="form-control" name="personal_fecha_nac"
-                            min="1923-01-31" max="2009-01-31" required>
+                            <input type="date" class="form-control" name="actividades_fecha"
+                            min="2024-04-30" max="2024-12-31" required> 
                         </div>
                         <div class="mx-3 col-3">
                             <label>Hora Inicio</label>
-                            <input type="time" class="form-control" name="personal_direccion" pattern="[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ -#.,]{5,200}" maxlength="200" required>
+                            <input type="text" class="form-control" name="actividades_hora_ini" id="actividades_hora_ini" required>
+                            <!-- <input type="time" class="form-control" name="actividades_hora_ini" id="actividades_hora_ini" max="20:00:00" min="08:00:00" required> -->
+                        </div>
+                        <div class="mx-3 col-3">
+                            <label>Hora Final</label>
+                            <input type="time" class="form-control" name="actividades_hora_fin" id="actividades_hora_fin" max="20:00:00" min="08:00:00" required>
                         </div>
                     </div>
                     <div class="modal-footer">
