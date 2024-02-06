@@ -110,6 +110,9 @@ if (isset($_GET['error'])) {
 }
 
 ?>
+<?php
+    require_once "./php/main.php";
+?>
 <!-- Boton abrir modal -->
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
   Nuevo registro
@@ -125,9 +128,7 @@ if (isset($_GET['error'])) {
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-            <?php
-                require_once "./php/main.php";
-            ?>
+
                 <!-- FORMULARIO -->
                 <form action="./php/personal_guardar.php" method="POST" class="FormularioAjax" autocomplete="off" enctype="multipart/form-data">
                     <div class="row mb-4">
@@ -211,4 +212,38 @@ if (isset($_GET['error'])) {
             </div>
         </div>
     </div>
+</div>
+<br>
+<br>
+<br>
+
+<div class="container pb-6 pt-6">
+
+<?php
+
+
+        //Eliminar persona
+        if (isset($_GET['personal_id_del'])) {
+            require_once "./php/personal_eliminar.php";
+        }
+
+        if (!isset($_GET['page'])) {
+            $pagina = 1;
+        } else {
+            $pagina = (int) $_GET['page'];
+            if ($pagina <=1) {
+                $pagina = 1;
+                
+            }
+        }
+
+        $pagina = limpiar_cadena($pagina);
+        $url = "index.php?vista=personal&page=";
+        $registros = 3;
+        $busqueda = "";
+        
+        require_once "./php/personal_lista.php";
+    ?>
+
+    
 </div>
