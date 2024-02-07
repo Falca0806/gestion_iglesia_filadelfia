@@ -6,43 +6,43 @@
     <ul class="nav nav-pills flex-column mb-auto">
       <li class="nav-item">
         <a href="index.php?vista=miembros" class="nav-link" aria-current="page">
-          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#home"/></svg>
+        <i class="fa-solid fa-user-group fa-xl" style="color: #ffffff;"></i>
           Miembros
         </a>
       </li>
       <li>
         <a href="index.php?vista=personal" class="nav-link ">
-          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#speedometer2"/></svg>
+        <i class="fa-solid fa-users-line fa-xl" style="color: #f2f2f2;"></i>
           Personal
         </a>
       </li>
       <li>
         <a href="index.php?vista=usuarios" class="nav-link ">
-          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#table"/></svg>
+        <i class="fa-solid fa-users-gear fa-xl" style="color: #ffffff;"></i>
           Usuarios
         </a>
       </li>
       <li>
         <a href="index.php?vista=cargos" class="nav-link ">
-          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#grid"/></svg>
+        <i class="fa-solid fa-address-card fa-xl" style="color: #ffffff;"></i>
           Cargos
         </a>
       </li>
     <li>
       <a href="index.php?vista=ministerios" class="nav-link">
-        <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
+      <i class="fa-solid fa-church fa-xl" style="color: #ffffff;"></i>
         Ministerios
       </a>
     </li>
     <li>
       <a href="index.php?vista=actividades" class="nav-link">
-        <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
+      <i class="fa-regular fa-calendar-check fa-xl" style="color: #ffffff;"></i>
         Actividades
       </a>
     </li>
     <li>
       <a href="index.php?vista=ingresos_egresos" class="nav-link">
-        <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
+      <i class="fa-solid fa-money-bill-transfer fa-xl" style="color: #ffffff;"></i>
         Ingresos/Egresos
       </a>
     </li>
@@ -50,8 +50,8 @@
     <hr>
     <div class="dropdown">
       <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-        <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
-        <strong>mdo</strong>
+        <i class="fa-solid fa-user fa-xl p-1" style="color: #ffffff;" ></i>
+        <strong>user</strong>
       </a>
       <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
         <li><a class="dropdown-item" href="index.php?vista=logout">Salir</a></li>

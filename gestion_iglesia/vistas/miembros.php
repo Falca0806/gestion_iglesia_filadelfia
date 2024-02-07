@@ -1,7 +1,10 @@
-<!-- Boton abrir modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Nuevo registro
-</button>
+<?php
+
+    require_once "./php/main.php";
+
+    // Boton abrir modal
+    require_once "./inc/boton_modal.php";
+?>
 
 <!-- Modal -->
 <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

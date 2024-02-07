@@ -11,7 +11,7 @@
         $consulta_total = "SELECT COUNT(personal_id) FROM personal WHERE personal_nombre LIKE '%$busqueda%' OR personal_dni LIKE '%$busqueda%'";
         
     } else {
-        $consulta_datos = "SELECT * FROM personal INNER JOIN cargos ON personal.personal_id=cargos.cargos_id ORDER BY personal_dni ASC LIMIT $inicio, $registros";
+        $consulta_datos = "SELECT * FROM personal INNER JOIN cargos ON personal.cargos_id=cargos.cargos_id ORDER BY personal_dni ASC LIMIT $inicio, $registros";
 
         $consulta_total = "SELECT COUNT(personal_id) FROM personal";
     }
@@ -66,10 +66,10 @@
                 <td>'. $rows['personal_estado_civil'] .'</td>
                 <td>'. $rows['cargos_nombre'] .'</td>
                 <td>
-                    <a href="index.php?vista=personal_update&personal_id_up='. $rows['personal_id'] .'" class="button is-success is-rounded is-small">Actualizar</a>
+                    <a href="index.php?vista=personal_edit&personal_id_edit='. $rows['personal_id'] .'" class="fa-solid fa-pen-to-square fa-xl" style="color: #FFD43B;"></a>                  
                 </td>
                 <td>
-                    <a href="'. $url . $pagina . ' &personal_id_del='. $rows['personal_id'] .'" class="button is-danger is-rounded is-small">Eliminar</a>
+                    <a href="'. $url . $pagina . ' &personal_borrar='. $rows['personal_id'] .'" class="fa-solid fa-trash-can fa-xl" style="color: #ec2222;"></a>
                 </td>
             </tr>
             ';
@@ -113,5 +113,5 @@
 
     //Paginador
     if ($total >= 1 && $pagina <= $numero_paginas) {
-        echo paginador_tablas($pagina, $numero_paginas,$url, 7);
+        echo paginador_tablas($pagina, $numero_paginas,$url, 1);
     }
